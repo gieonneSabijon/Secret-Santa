@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request, session
 
 app = Flask(__name__)
 
@@ -8,7 +8,20 @@ def index():
 
 @app.route('/endpoint', methods=['POST'])
 def handle_request():
-    pass
+    try:
+        data = request.get_json()
+        name = data['name']
+        email = data['email']
+        sendInfo(name, email)
+        result = {"message": "JSON received", "data": data}
+        return jsonify(result)
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
+
+
+def sendInfo(name, email):
+    print(f'Name: {name} Email: {email}')
 
 if __name__ == "__main__":
     app.run(debug = True)
