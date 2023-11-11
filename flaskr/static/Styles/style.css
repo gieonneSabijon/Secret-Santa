@@ -1,0 +1,154 @@
+html, body {
+    height: 100%;
+}
+
+html *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.fullPage {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+}
+
+
+.marginals {
+    height: 5%;
+    background-color: #a80505;
+}
+
+.contentWrapper {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 80%;
+    border: 5px solid #a80505;
+    border-radius: 25px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.personList {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+}
+.newPerson {
+    flex-shrink: 0;
+    margin: 3%;
+    height: 5vh;
+}
+
+.newPerson button {
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    background-color: #40a85e;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    
+}
+
+.newPerson button:hover, .newPerson button:active, .sendWrapper button:hover {
+    background-color: #288045;
+}
+
+.newPerson button:active, .sendWrapper button:active{
+    transform: translateY(5px);
+}
+
+
+
+.editWrapper {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    width: 30%;
+    height: 20%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    border: none;
+    background-color: transparent;
+}
+
+.editWrapper::backdrop {
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 1px,
+        rgba(0, 0, 0, 0.3) 1px,
+        rgba(0, 0, 0, 0.3) 20px
+    );
+    backdrop-filter: blur(3px);
+}
+
+
+
+.editMenu {
+    width: 100%;
+    height: 100%;
+    background-color: #a80505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.editMenuInnerBorder {
+    border: 3px solid white;
+    width: 100%;
+    height: 90%;
+    margin: 1%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.editRow {
+    margin-bottom: 1%;
+    height: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.nameInput, .emailInput {
+    width: 45%;
+    height: 50%;
+}
+
+.editRow button{
+    width: 25%;
+    height: 50%;
+}
+.sendWrapper{
+    height: 10%;
+    width: 10%;
+}
+
+.sendWrapper button{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    background-color: #40a85e;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+

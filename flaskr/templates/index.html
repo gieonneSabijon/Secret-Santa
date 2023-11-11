@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello, world!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='Styles/style.css') }}">
+    <link rel="icon" href="favicon.png">
+    <script type="text/javascript" src="{{ url_for('static',filename='Scripts/main.js') }}"></script>
+</head>
+
+<body>
+
+    
+
+    <div class="fullPage">
+        
+        <dialog class="editWrapper">
+            <div class="editMenu">
+                <div class="editMenuInnerBorder">
+                    <div class="editRow">
+                        <input class="nameInput" placeholder="Name"></input>
+
+                        <input class="emailInput" placeholder="Email"></input>
+                    </div>
+
+
+                    <div class="editRow submissionRow">
+                        <button class="cancelButton" onclick="toggleDialog('close')">
+                            <p>Cancel</p>
+                        </button>
+
+                        <button class="saveButton" onclick="savePerson()">
+                            <p>Save</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </dialog>
+
+        <div class="headerWrapper marginals">
+
+        </div>
+
+        <div class="contentWrapper">
+            
+            <div class="listWrapper">
+                <div class="personList">
+                    <div class="newPerson">
+                        <button onclick="toggleDialog('open')">New Person</button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="sendWrapper">
+                <button>
+                    <p>Send</p>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="footerWrapper marginals">
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
