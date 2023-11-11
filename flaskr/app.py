@@ -1,10 +1,4 @@
 from flask import Flask, render_template, jsonify, request, session
-from dotenv import load_dotenv
-import os
-
-
-load_dotenv()
-secret_key = os.getenv("SECRET_KEY")
 
 app = Flask(__name__)
 
