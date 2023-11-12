@@ -1,4 +1,5 @@
-from flask import Flask, render_template, jsonify, request, session
+from flask import Flask, render_template, jsonify, request
+from random import randrange
 
 app = Flask(__name__)
 
@@ -10,18 +11,31 @@ def index():
 def handle_request():
     try:
         data = request.get_json()
-        name = data['name']
-        email = data['email']
-        sendInfo(name, email)
+        senders = list(data.keys())
+        recievers = senders.copy()
+        shuffle(recievers)
+
+        giftPairs = makePairs(senders, recievers, data)
+
         result = {"message": "JSON received", "data": data}
         return jsonify(result)
     
     except Exception as e:
         return jsonify({"error": str(e)})
+    
+def makePairs(senders, recievers, data):
+    giftPairs = {}
+    for i, sender in enumerate(senders):
+        giftPairs[sender] = (recievers[i], data[recievers[i]])
+    
+    return giftPairs
 
-
-def sendInfo(name, email):
-    print(f'Name: {name} Email: {email}')
+def shuffle(items):
+    i = len(items)
+    while i > 1:
+        i = i - 1
+        j = randrange(i)
+        items[j], items[i] = items[i], items[j]
 
 if __name__ == "__main__":
     app.run(debug = True)

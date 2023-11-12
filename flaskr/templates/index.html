@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Hello, world!</title>
+    <title>Secret Santa</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='Styles/style.css') }}">
     <link rel="icon" href="favicon.png">
-    <script type="text/javascript" src="{{ url_for('static',filename='Scripts/main.js') }}"></script>
+    <script src="{{ url_for('static',filename='Scripts/main.js') }}"></script>
 </head>
 
 <body>
@@ -48,6 +48,9 @@
             
             <div class="listWrapper">
                 <div class="personList">
+                    
+
+
                     <div class="newPerson">
                         <button onclick="toggleDialog('open')">New Person</button>
                     </div>
@@ -56,7 +59,7 @@
                 </div>
             </div>
             <div class="sendWrapper">
-                <button>
+                <button onclick="sendData()">
                     <p>Send</p>
                 </button>
             </div>

@@ -47,13 +47,51 @@ html *{
     overflow: auto;
 
 }
-.newPerson {
+.newPerson{
     flex-shrink: 0;
     margin: 3%;
     height: 5vh;
 }
 
-.newPerson button {
+
+
+.existingPerson {
+    position: relative;
+    flex-shrink: 0;
+    margin: 3%;
+    height: 5vh;
+    background-color: #40a85e;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.existingPerson button {
+    text-align: center;
+    padding-bottom: 2px;
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    border: none; /*#a80505  #fc1420*/
+    background-color: #a80505;
+    color: white;
+}
+
+.existingPerson button:hover, .existingPerson button:active {
+    background-color: #fc1420;
+}
+
+.existingPerson button:active{
+    transform: translateY(2px);
+}
+
+.newPerson button{
     cursor: pointer;
     height: 100%;
     width: 100%;
